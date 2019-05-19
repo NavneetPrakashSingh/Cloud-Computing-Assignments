@@ -1,0 +1,47 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Lato:300,400" rel="stylesheet">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">BMI Calculator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse  help-section" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <span>Help</span>
+      </li>     
+    </ul>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Calculate BMI</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Enter Height (in metres)</span>
+      </div>
+      <input type="text" class="form-control inputHeight" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <p class="text-danger invalid-height">Make sure that height is numeric or digit</p>
+    <p class="text-success valid-height">Height entered is valid</p>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Enter Weight (in kilogram)</span>
+      </div>
+      <input type="text" class="form-control inputWeight" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <p class="text-danger invalid-weight">Make sure that weight is numeric or digit</p>
+    <p class="text-success valid-weight">Weight entered is valid</p>
+    <p class="lead calculate">
+      <a class="btn btn btn-info btn-lg" href="#" role="button">Calculate BMI</a>
+    </p>
+
+      <div class="output"></div>
+      <div class="output-message"></div>
+
+  </div>
+</div>
