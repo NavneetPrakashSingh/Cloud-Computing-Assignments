@@ -54,23 +54,26 @@ $('.calculate').click(function (){
 
 function getResponseFromUrl(height, weight){
     var apiUrl = 'http://localhost:1337/calculate744/?height='+height+'&weight='+weight;
-    // $.ajax( url, function( data ) {
-    //     alert("recieveing response");
-    //     $('.output').empty();
-    //     $('.output').append("Calculated BMI is"+data.bmiValue);
-    //   });
 
-    $.ajax({url: apiUrl, success: function(data){
+
+    $.ajax(apiUrl, {
+        "timeout": "4000"
+    })
+    .done(function (data, textStatus, jqXHR) {
+        // Process data, as received in data parameter
         $('.output').empty();
         $('.output-message').empty();
         $('.output-box').empty();
         $('.output').append("Calculated BMI is "+data.bmiValue);
         $('.output-message').append("Message for you is: "+data.bmiMessage);
-    }});
-    // io.socket.get(url, function gotResponse(body, response) {
-    //     $('.output').empty();
-    //     $('.output').append("Calculated BMI is"+body.bmiValue);
-    // })
+    })
+    .fail(function (jqXHR, textStatus, errorThrown) {
+        $('.output').empty();
+        $('.output-message').empty();
+        $('.output-box').empty();
+        $('.output').append("API is not responding. Please try again after some time");
+        
+    })
 }
 
 $('.help-section').click(function(){
